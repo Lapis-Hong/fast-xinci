@@ -1,6 +1,9 @@
 # Prerequisites
 *.d
 
+.idea/
+xinci
+
 # Compiled Object files
 *.slo
 *.lo

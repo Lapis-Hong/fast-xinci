@@ -6,23 +6,18 @@
 #include "dictionary.h"
 #include "extractor.h"
 #include "selector.h"
+
 using namespace xinci;
 
-void printUsage() {
-    Args a = Args();
-    std::cerr << "Usage: fast-xinci <args>\n";
-    a.printHelp();
-}
-
 int main(int argc, char** argv) {
-    // std::locale currentlocale("chs");
     std::vector<std::string> args(argv, argv + argc);
+    Args a = Args();
+
     if (args.size() < 2) {
         std::cerr << "Empty input path." << std::endl;
-        printUsage();
+        a.printHelp();
         exit(EXIT_FAILURE);
     }
-    Args a = Args();
     a.parseArgs(args);
     a.printArgs();
 
@@ -33,8 +28,8 @@ int main(int argc, char** argv) {
     std::istreambuf_iterator<char> end;
     std::string document(begin, end);
 
+    //std::string document = u8"我们是中国人！";
 
-//    std::string document = u8"我们是中国人！";
 //    CnTextSelector selector (document, 5, 2);
 //    std::cout << document.size() << std::endl;
 //    std::cout << document.substr(0,3) << std::endl;
@@ -44,12 +39,9 @@ int main(int argc, char** argv) {
 //    std::cout << selector.next() << std::endl;}
 
     Dictionary dictionary (a.commonWordsDic);
-    WordExtractor xc (document, dictionary, a.minCandidateLen, a.maxCandidateLen,
+    WordExtractor xc (document, a.output, dictionary, a.minCandidateLen, a.maxCandidateLen,
         a.leastWordCount, a.solidRate, a.entropyRate, a.allWords);
     xc.extract();
-
-
-
 
     return 0;
 }

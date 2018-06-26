@@ -13,6 +13,7 @@ namespace xinci {
 
 class WordExtractor {
     std::string document_;
+    std::string output_;
     Dictionary dictionary_;
     int minCandidateLen_;
     int maxCandidateLen_;
@@ -23,9 +24,10 @@ class WordExtractor {
 
 
 public:
-    WordExtractor(std::string document, Dictionary dictionary,
+    WordExtractor(std::string document, std::string output_,
+                  Dictionary dictionary,
                   int minCandidateLen, int maxCandidateLen,
-                  int leastwordCount, double solidRate,
+                  int leastWordCount, double solidRate,
                   double entropy, bool allWords);
 
     void extract();

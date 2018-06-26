@@ -48,28 +48,26 @@ double EntropyJudger::getEntropy(std::string candidate) {
         ++left_char_dic[left_char];
         right_char = indexer.at(pos + candidate.size());
         ++right_char_dic[right_char];
-
-        int left_char_cnt = 0;
-        for (auto &w: left_char_dic) {
-            left_char_cnt += w.second;
-        }
-        int right_char_cnt = 0;
-        for (auto &w: right_char_dic) {
-            right_char_cnt += w.second;
-        }
-        double l_entropy, r_entropy, p = 0.0;
-
-        for (auto &w: left_char_dic) {
-            p = w.second / left_char_cnt; // character frequency as prob
-            l_entropy -= p * log(p);
-        }
-        for (auto &w: right_char_dic) {
-            p = w.second / right_char_cnt;
-            r_entropy -= p * log(p);
-        }
-        return std::min(l_entropy, r_entropy);
     }
+    int left_char_cnt = 0;
+    for (auto &w: left_char_dic) {
+        left_char_cnt += w.second;
+    }
+    int right_char_cnt = 0;
+    for (auto &w: right_char_dic) {
+        right_char_cnt += w.second;
+    }
+    double l_entropy, r_entropy, p = 0.0;
 
+    for (auto &w: left_char_dic) {
+        p = w.second / left_char_cnt; // character frequency as prob
+        l_entropy -= p * log(p);
+    }
+    for (auto &w: right_char_dic) {
+        p = w.second / right_char_cnt;
+        r_entropy -= p * log(p);
+    }
+    return std::min(l_entropy, r_entropy);
 }
 
 }

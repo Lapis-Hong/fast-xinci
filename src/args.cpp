@@ -29,7 +29,6 @@ void Args::parseArgs(const std::vector<std::string> &args) {
         }
         try {
             if (args[ai] == "-h") {
-                std::cerr << "Here is the help! Usage:" << std::endl;
                 printHelp();
                 exit(EXIT_FAILURE);
             } else if (args[ai] == "-input") {
@@ -85,7 +84,7 @@ void Args::printArgs() {
 
 }
 void Args::printHelp() {
-    std::cerr
+    std::cerr << "Usage: \n\txinci <args>\n"
             << "\nThe following arguments are mandatory:\n"
             << "  -input              input corpus file path\n"
             << "\nThe following arguments are optional:\n"

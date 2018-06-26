@@ -2,26 +2,26 @@
 
 * [Introduction](#introduction)
 * [Requirements](#requirements)
-* [Building fast-xinci](#building fast-xinci)
+* [Building fast-xinci](#building-fast-xinci)
 * [Examples](#examples)
-   * [New words discovery](#new word discovery)
-   * [Words extraction](#words extraction)
+   * [New words discovery](#new-words-discovery)
+   * [Words extraction](#words-extraction)
 * [Full documentation](#full-documentation)
 * [References](#references)
 
 ## Introduction
 
 [xinci] is a C++ library for Chinese new words discovery.
-Also see Python package [xinci] (https://github.com/Lapis-Hong/xinci)
+Also see Python package [xinci](https://github.com/Lapis-Hong/xinci)
 
-还在嫌Python包[xinci](https://github.com/Lapis-Hong/xinci)速度不都快吗？
+还在嫌Python包 [xinci] (https://github.com/Lapis-Hong/xinci)速度不都快吗？
 C++版 新词发现算法来啦，赶快来star吧！
 
 
 
 ## Requirements
 
-Generally, **xinci** builds on modern Mac OS and Linux distributions.
+Generally, **fast-xinci** builds on modern Mac OS and Linux distributions.
 Since it uses some C++11 features, it requires a compiler with good C++11 support.
 These include :
 
@@ -33,10 +33,10 @@ These include :
 ## Building fast-xinci
 
 ```
-$ git clone git@github.com:Lapis-Hong/fast-xinci.git
+$ git clone https://github.com/Lapis-Hong/fast-xinci.git
 $ cd fast-xinci
 $ mkdir build && cd build && cmake ..
-$ make && make install
+$ make
 ```
 This will create the fast-xinci binary and also all relevant libraries (shared, static, PIC).
 
@@ -50,7 +50,7 @@ This library has two main use cases: Chinese words extraction and Chinese new wo
 ### 1. New words discovery
 
 ```
-$ ./fast-xinci -input data.txt
+$ ./xinci -input data.txt
 ```
 where `data.txt` is a training file containing `UTF-8` encoded text.
 The program will save one file: `result.txt`
@@ -59,19 +59,19 @@ The program will save one file: `result.txt`
 ### 2. Words extraction
 
 ```
-$ ./fast-xinci -input data.txt -a
+$ ./xinci -input data.txt -a
 ```
 
 
 ## Full documentation
 
-Invoke a command without arguments to list available arguments and their default values:
+Invoke a command without arguments or -h to list available arguments and their default values:
 
 ```
-$ ./fast-xinci
+$ ./xinci
 Empty input path.
-
-Usage: fast-xinci <args>
+Usage:
+    xinci <args>
 
 The following arguments are mandatory:
   -input              input corpus file path
@@ -89,8 +89,8 @@ The following arguments are optional:
 ```
 ## References
 
-### https://github.com/Lapis-Hong/xinci
-### https://github.com/GeorgeBourne/grid
+https://github.com/Lapis-Hong/xinci
+https://github.com/GeorgeBourne/grid
 
 
 
