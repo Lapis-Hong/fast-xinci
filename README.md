@@ -14,7 +14,7 @@
 [xinci] is a C++ library for Chinese new words discovery.
 Also see Python package [xinci](https://github.com/Lapis-Hong/xinci)
 
-还在嫌Python包 [xinci] (https://github.com/Lapis-Hong/xinci)速度不都快吗？
+还在嫌Python包 [xinci](https://github.com/Lapis-Hong/xinci)速度不都快吗？
 C++版 新词发现算法来啦，赶快来star吧！
 
 
@@ -90,6 +90,7 @@ The following arguments are optional:
 ## References
 
 https://github.com/Lapis-Hong/xinci
+
 https://github.com/GeorgeBourne/grid
 
 
